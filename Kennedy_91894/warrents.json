@@ -1,0 +1,28 @@
+{
+    "warrents": [
+        {
+            "criminals_name": "james wilson"
+        },
+        {
+            "criminals_name": "helga norman"
+        },
+        {
+            "criminals_name": "zachary conroy"
+        }
+    ],
+
+    "fines": [
+        {
+            "speedsers_name": "",
+            "balance_owed": ""
+        },
+        {
+            "speedsers_name": "",
+            "balance_owed": ""
+        },
+        {
+            "speedsers_name": "",
+            "balance_owed": ""
+        }
+    ]
+}
