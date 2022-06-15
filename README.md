@@ -1,13 +1,13 @@
 # Howick College Programming Assessment 
 
-<h1>Login:<h1/>
+<h3>Login:</h3>
 Username: admin
 Pin: 1234
 
-Current websites listed:
+<h3>Current websites listed:</h3>
 
 
-Breif:
+<h3>Breif:</h3>
 Our task is to create a program labeled “password safe” This program will be used to store passwords for the end user allowing the user to configure, modify and change these stored passwords to their heart's content. To achieve this The program is required to contain these main functions
 
 1. Find the password for and existing website
