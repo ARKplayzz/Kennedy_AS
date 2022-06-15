@@ -1,20 +1,19 @@
 # Howick College Programming Assessment 
 
-
 <h3>Current Websites listed:</h3>
-Website: Gmail
+Website: Gmail,
 Password: Password123
-
-Website: Sshwifty
+ 
+Website: Sshwifty,
 Password: Reflection27
-
-Website: Steam
+ 
+Website: Steam,
 Password: Jetski160
-
+ 
 <h3>Login:</h3>
 Username: admin
 Pin: 1234
-
+ 
 <h3>Breif:</h3>
 Our task is to create a program labeled “password safe” This program will be used to store passwords for the end user allowing the user to configure, modify and change these stored passwords to their heart's content. To achieve this The program is required to contain these main functions
 
