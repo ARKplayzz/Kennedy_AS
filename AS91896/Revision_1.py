@@ -5,12 +5,9 @@ by Andrew Kennedy
 5/05/2022
 '''
 
-# Import Modules - Modules can be used to implement external features like "random" or "json"
-
-
 # Defining Constants - Constants are variables that stay the same during the entirety of the programme 
-USER_LOGIN = [['admin', 1234],['ARKennedy', 3605]]
-WEBSITE_LIST = [['website', 'Password123'],['ssh','Reflection27']]
+USER_LOGIN = ['admin', 1234]
+WEBSITE_LIST = [['gmail', 'Password123'],['sshwifty','Reflection27'],['steam','Jetski160']]
 
 PASS_MAX_LENGTH = 16
 PASS_MIN_LENGTH = 4
@@ -55,22 +52,19 @@ def pass_login(): # This Function runs a login proccedure for the user and retur
 
     user = get_string('NOTICE: Please input your username >>> ')
 
-    for i in range(len(USER_LOGIN)):
 
-        if user == USER_LOGIN[i][0]:
+    if user == USER_LOGIN[0]:
 
-            pin = get_pin()
+        pin = get_pin()
 
-            if pin == USER_LOGIN[i][1]:
-                return True
-
-            else:
-                print(f'ALERT: That pin is incorrect for the user "{user}"')
-                break
+        if pin == USER_LOGIN[1]:
+            return True
 
         else:
-            print(f'ALERT: "{user}" Is not currently a known username')
-            break
+            print(f'ALERT: That pin is incorrect for the user "{user}"')
+
+    else:
+        print(f'ALERT: "{user}" Is not currently a known username')
 
 
 # Main Programme -  This is where the base programme will run
@@ -98,27 +92,41 @@ menu_input = get_integer('>>> ')
 if menu_input == 1:
     web_lookup = get_string('NOTICE: Enter the website you want to lookup the password for >>> ')
 
-    for website in range(len(WEBSITE_LIST)):
-        if web_lookup.lower() == WEBSITE_LIST[website][0].lower():
-            print(f'NOTICE: The password for the website: {WEBSITE_LIST[website][0]} is { WEBSITE_LIST[website][1]}')
+    issue_check = True
 
-    print('ALERT: Please input a Website That already has a password inputed with it!')
+    for website in range(len(WEBSITE_LIST)):
+
+        if web_lookup.lower() == WEBSITE_LIST[website][0].lower():
+
+            print(f'NOTICE: The password for the website: {WEBSITE_LIST[website][0]} is { WEBSITE_LIST[website][1]}')
+            issue_check = False
+
+    if issue_check == True:
+        print('ALERT: Please input a Website That already has a password inputed with it!')
 
 elif menu_input == 2:
     web_log = get_string('NOTICE: Please input the name of the website you would like to add a password for >>> ')
 
+    issue_check = False
+
     for website in range(len(WEBSITE_LIST)):
+
         if web_log.lower() == WEBSITE_LIST[website][0].lower():
+
             print(f'ALERT: The website: {WEBSITE_LIST[website][0]} is already logged whithin the programme')
             print(f'ALERT: Try selecting option [3] to edit an existing websites password')
 
-    pass_log = get_pass('NOTICE: Please enter your new password, Eg. Reflection27 >>> ')
+            issue_check = True
 
-    WEBSITE_LIST.append([web_log, pass_log])
+    if issue_check == False:
 
-    print(f'NOTICE: The password {pass_log} has been saved to the website {web_log}')
+        pass_log = get_pass('NOTICE: Please enter your new password, Eg. Reflection27 >>> ')
 
-elif menu_input == 3:
+        WEBSITE_LIST.append([web_log, pass_log])
+
+        print(f'NOTICE: The password {pass_log} has been saved to the website {web_log}')
+
+elif menu_input == 3: 
     web_log = get_string('NOTICE: Please input the name of the website you would like to edit the password for >>> ')
 
     for website in range(len(WEBSITE_LIST)):
@@ -128,8 +136,7 @@ elif menu_input == 3:
 
     pass_log = get_pass(f'NOTICE: Please enter your new password for {web_log}, Eg. Reflection27 >>> ')
     WEBSITE_LIST[website][1] = pass_log
-    print(WEBSITE_LIST[website][1])
-    print(WEBSITE_LIST)
+
 
     print(f'NOTICE: The password {pass_log} has been saved to the website {web_log}')
 
@@ -142,8 +149,8 @@ elif menu_input == 4:
             print(f'ALERT: The website {web_log} does not exist, try selecting option [2] to add a new website & password')
 
     
-    del(WEBSITE_LIST[website])
-    print(WEBSITE_LIST)
+    WEBSITE_LIST[website].pop(1)
+    WEBSITE_LIST[website].pop(0)
 
     print(f'NOTICE: The website: {web_log} has been successfult removed from the programme')
 
