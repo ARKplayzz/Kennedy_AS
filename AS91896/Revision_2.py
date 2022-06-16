@@ -137,6 +137,20 @@ def menu_opt_4(): # This Function removes an existing WEBSIT along with its PASS
     print(WEBSITE_LIST)
 
     print(f'NOTICE: The website: {web_log} has been successfuly removed from the programme')
+    
+def menu_opt_7():
+    print('NOTICE: Here are all the currently stored Websites and Passwords in the Password Safe Programme')
+    
+    with open ('passwords.json','r') as passwords_json: 
+        website_list = json.load(passwords_json)
+        passwords_json.close()
+        
+    for counter in range(len(website_list['websites'])):
+
+        requested_website = website_list['websites'][f'website_{counter}']['website']
+        requested_password = website_list['websites'][f'website_{counter}']['password']
+        
+        print(f'NOTICE: The Website "{requested_website}" has the Password "{requested_password}"')
 
 # Main Programme -  This is where the base programme will run
 
