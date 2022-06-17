@@ -40,7 +40,7 @@ def get_pin(): # This Function gains an INTEGER from the user providing it back 
         return pin
     except ValueError:
         print('ALERT: Please make sure to input a 4 digit pin')
-        
+
 def get_pass(question): # This Function gains an STRING from the user providing it back to the programme only if it meets the requirements of a PASSWORD
     try:
         password = str(input(question))
@@ -50,7 +50,7 @@ def get_pass(question): # This Function gains an STRING from the user providing 
         return password
     except ValueError:
         print(f'ALERT: Please make sure to input a password at least {PASS_MIN_LENGTH} and contain at least {PASS_MIN_NUMBERS} numbers')
-    
+
 def pass_login(): # This Function runs a login proccedure for the user and returns back TRUE weather or not the user has successfuly logged in
 
     user = get_string('NOTICE: Please input your username >>> ')
