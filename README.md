@@ -1,4 +1,6 @@
 # Howick College Programming Assessment 
+Upon opening the programme you will be meet with a requirement to enter a username and pin to login to the main programme, using the login details “admin”, “1234” once in the programme you will be meet with the menu, the main menu is your guide through the programme displaying all available features to the user.
+
 
 <h3>Current Websites listed:</h3>
 
