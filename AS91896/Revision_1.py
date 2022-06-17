@@ -85,7 +85,6 @@ print('''
 3. Change an existing password for an existing website/app
 4. Remove an existing website/app and its password
 5. Exit
-6.
 ''')
 menu_input = get_integer('>>> ')
 
